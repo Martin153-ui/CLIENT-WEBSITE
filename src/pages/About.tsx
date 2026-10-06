@@ -1,31 +1,10 @@
 import { business } from "../config/business";
+import Header from "../components/Header";
 
 function About() {
   return (
     <>
-      <header className="site-header">
-        <a href="/" className="brand" aria-label="MALDEE BEAUTY home">
-          <span className="brand-main">MALDEE</span>
-          <span className="brand-sub">BEAUTY</span>
-        </a>
-
-        <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/gallery">Gallery</a>
-          <a href="/contact">Contact</a>
-        </nav>
-
-        <a
-          className="header-whatsapp"
-          href={business.whatsappLink}
-          target="_blank"
-          rel="noreferrer"
-        >
-          WhatsApp Us
-        </a>
-      </header>
+      <Header />
 
       <main id="main-content">
         <section className="section">
@@ -88,7 +67,9 @@ function About() {
           <div className="trust-grid">
             <div>
               <strong>01</strong>
+
               <h3>Attention to Detail</h3>
+
               <p>
                 Every service deserves care, precision and thoughtful
                 execution.
@@ -97,7 +78,9 @@ function About() {
 
             <div>
               <strong>02</strong>
+
               <h3>Professional Environment</h3>
+
               <p>
                 A welcoming environment focused on your beauty experience.
               </p>
@@ -105,7 +88,9 @@ function About() {
 
             <div>
               <strong>03</strong>
+
               <h3>Personalized Service</h3>
+
               <p>
                 Services and beauty choices that reflect your individual
                 preferences.
@@ -114,7 +99,9 @@ function About() {
 
             <div>
               <strong>04</strong>
+
               <h3>Convenient Location</h3>
+
               <p>
                 Conveniently located in Thika Town, Kenya.
               </p>
@@ -162,6 +149,7 @@ function About() {
 
         <div>
           <h3>Explore</h3>
+
           <a href="/">Home</a>
           <a href="/about">About</a>
           <a href="/services">Services</a>
@@ -183,8 +171,15 @@ function About() {
 
         <div>
           <h3>Contact</h3>
-          <a href={business.phoneLink}>{business.phone}</a>
-          <a href={`mailto:${business.email}`}>{business.email}</a>
+
+          <a href={business.phoneLink}>
+            {business.phone}
+          </a>
+
+          <a href={`mailto:${business.email}`}>
+            {business.email}
+          </a>
+
           <span>{business.location}</span>
         </div>
 
