@@ -1,4 +1,5 @@
 import { business } from "../config/business";
+import Header from "../components/Header";
 
 function Home() {
   const whatsappMessage = encodeURIComponent(
@@ -7,29 +8,7 @@ function Home() {
 
   return (
     <>
-      <header className="site-header">
-        <a href="/" className="brand" aria-label="MALDEE BEAUTY home">
-          <span className="brand-main">MALDEE</span>
-          <span className="brand-sub">BEAUTY</span>
-        </a>
-
-        <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/gallery">Gallery</a>
-          <a href="/contact">Contact</a>
-        </nav>
-
-        <a
-          className="header-whatsapp"
-          href={`${business.whatsappLink}?text=${whatsappMessage}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          WhatsApp Us
-        </a>
-      </header>
+      <Header />
 
       <main id="main-content">
         <section className="hero">
@@ -207,7 +186,9 @@ function Home() {
           <div className="trust-grid">
             <div>
               <strong>01</strong>
+
               <h3>Attention to Detail</h3>
+
               <p>
                 Every beauty service deserves care, precision and attention.
               </p>
@@ -215,7 +196,9 @@ function Home() {
 
             <div>
               <strong>02</strong>
+
               <h3>Professional Environment</h3>
+
               <p>
                 A welcoming setting designed around your beauty experience.
               </p>
@@ -223,7 +206,9 @@ function Home() {
 
             <div>
               <strong>03</strong>
+
               <h3>Personalized Service</h3>
+
               <p>
                 Beauty choices that reflect your individual style and needs.
               </p>
@@ -231,7 +216,9 @@ function Home() {
 
             <div>
               <strong>04</strong>
+
               <h3>Convenient Location</h3>
+
               <p>
                 Conveniently located in Thika Town, Kenya.
               </p>
