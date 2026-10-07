@@ -1,4 +1,7 @@
+```tsx id="m4q2vk"
+import { business } from "../config/business";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function Gallery() {
   const galleryItems = [
@@ -39,6 +42,10 @@ function Gallery() {
       category: "Body Art",
     },
   ];
+
+  const whatsappMessage = encodeURIComponent(
+    "Hello MALDEE BEAUTY, I would like to enquire about your services."
+  );
 
   return (
     <>
@@ -88,11 +95,7 @@ function Gallery() {
             <div className="contact-actions">
               <a
                 className="button button-dark"
-                href={`${
-                  "https://wa.me/254724400750"
-                }?text=${encodeURIComponent(
-                  "Hello MALDEE BEAUTY, I would like to enquire about your services."
-                )}`}
+                href={`${business.whatsappLink}?text=${whatsappMessage}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -101,14 +104,14 @@ function Gallery() {
 
               <a
                 className="button button-light"
-                href="tel:+254724400750"
+                href={business.phoneLink}
               >
                 Call Now
               </a>
 
               <a
                 className="button button-light"
-                href="mailto:njagidiana41@gmail.com"
+                href={`mailto:${business.email}`}
               >
                 Email Us
               </a>
@@ -117,67 +120,10 @@ function Gallery() {
         </section>
       </main>
 
-      <footer className="footer">
-        <div>
-          <div className="footer-brand">MALDEE BEAUTY</div>
-
-          <p>
-            Beauty, confidence, artistry and personal expression in Thika Town.
-          </p>
-        </div>
-
-        <div>
-          <h3>Explore</h3>
-
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/gallery">Gallery</a>
-          <a href="/contact">Contact</a>
-        </div>
-
-        <div>
-          <h3>Opening Hours</h3>
-
-          <p>
-            <strong>Monday – Friday</strong>
-            <br />
-            8:00 AM – 5:00 PM
-          </p>
-
-          <p>
-            <strong>Saturday</strong>
-            <br />
-            8:00 AM – 4:00 PM
-          </p>
-
-          <p>
-            <strong>Sunday</strong>
-            <br />
-            Closed
-          </p>
-        </div>
-
-        <div>
-          <h3>Contact</h3>
-
-          <a href="tel:+254724400750">
-            +254 724 400 750
-          </a>
-
-          <a href="mailto:njagidiana41@gmail.com">
-            njagidiana41@gmail.com
-          </a>
-
-          <span>Thika Town, Kenya</span>
-        </div>
-
-        <div className="footer-bottom">
-          © 2026 MALDEE BEAUTY. All rights reserved.
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
 
 export default Gallery;
+```
