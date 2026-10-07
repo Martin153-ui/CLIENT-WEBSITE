@@ -15,22 +15,31 @@ function Home() {
       <main id="main-content">
         <section className="hero">
           <div className="hero-content">
-            <p className="eyebrow">THIKA TOWN • KENYA</p>
+            <p className="eyebrow">MALDEE BEAUTY • THIKA TOWN</p>
 
-            <h1>{business.tagline}</h1>
+            <h1>Beauty, Confidence & Artistry — All in One Place</h1>
 
-            <p className="hero-text">
-              Discover professional beauty services, personal expression and
-              carefully selected beauty products at MALDEE BEAUTY.
+            <p>
+              Professional beauty services, personal expression and carefully
+              selected beauty products in one elegant destination in Thika
+              Town, Kenya.
             </p>
 
             <div className="hero-actions">
-              <a className="button button-dark" href="/contact">
-                Book an Appointment
+              <a
+                className="button button-dark"
+                href={`${business.whatsappLink}?text=${whatsappMessage}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp Us
               </a>
 
-              <a className="button button-light" href="/services">
-                Explore Our Services
+              <a
+                className="button button-light"
+                href="/services"
+              >
+                Explore Services
               </a>
             </div>
 
@@ -44,15 +53,17 @@ function Home() {
               </a>
 
               <a href={business.phoneLink}>
-                Call {business.phone}
+                {business.phone}
               </a>
+
+              <span>{business.location}</span>
             </div>
           </div>
 
           <div className="hero-image">
             <img
-              src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=85"
-              alt="Professional beauty portrait"
+              src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1400&q=85"
+              alt="Professional beauty workspace"
             />
           </div>
         </section>
@@ -61,18 +72,23 @@ function Home() {
           <div className="section-heading">
             <p className="eyebrow">WHAT WE OFFER</p>
 
-            <h2>Beauty services designed around you.</h2>
+            <h2>
+              Beauty services created to complement your style.
+            </h2>
 
             <p>
-              From makeup and lashes to wigs, microblading and body artistry,
-              MALDEE BEAUTY brings different expressions of beauty together in
-              one professional destination.
+              From professional makeup and lashes to wigs, microblading,
+              tattooing and body piercing, MALDEE BEAUTY brings a diverse
+              range of beauty experiences together.
             </p>
           </div>
 
           <div className="services-grid">
             {business.services.slice(0, 6).map((service, index) => (
-              <article className="service-card" key={service.name}>
+              <article
+                className="service-card"
+                key={service.name}
+              >
                 <span className="service-number">
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -81,17 +97,17 @@ function Home() {
 
                 <p>{service.description}</p>
 
-                <a href="/contact">Inquire →</a>
+                <a href="/services">Explore Service →</a>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="about-section">
+        <section className="about-section section">
           <div className="about-image">
             <img
-              src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85"
-              alt="Beauty professional workspace"
+              src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1200&q=85"
+              alt="Professional makeup styling"
               loading="lazy"
             />
           </div>
@@ -100,81 +116,117 @@ function Home() {
             <p className="eyebrow">ABOUT MALDEE BEAUTY</p>
 
             <h2>
-              Where beauty meets confidence and personal expression.
+              Beauty, artistry and confidence in one destination.
             </h2>
 
             <p>
-              MALDEE BEAUTY brings beauty services, beauty products and
-              personal expression together in one professional destination in
-              Thika Town.
+              MALDEE BEAUTY brings together professional beauty services,
+              personal style and selected beauty products in Thika Town.
             </p>
 
             <p>
-              Whether you are looking for a polished makeup look, beautiful
-              lashes, a new wig installation, body artistry or beauty products
-              for your routine, our goal is to provide a welcoming and
-              professional experience.
+              Whether you are preparing for a special occasion, refreshing
+              your everyday look or exploring personal expression through
+              body art, our services are designed around your individual
+              beauty experience.
             </p>
 
-            <a className="text-link" href="/about">
-              Discover MALDEE BEAUTY →
+            <a
+              className="button button-dark"
+              href="/about"
+            >
+              Discover MALDEE BEAUTY
             </a>
           </div>
         </section>
 
-        <section className="section products-section">
+        <section className="products-section section">
           <div className="section-heading">
-            <p className="eyebrow">BEAUTY COLLECTION</p>
+            <p className="eyebrow">BEAUTY PRODUCTS</p>
 
-            <h2>Products to complement your beauty routine.</h2>
+            <h2>
+              Complete your beauty routine.
+            </h2>
+
+            <p>
+              Explore selected makeup, skincare, haircare, wigs and
+              fragrances available from MALDEE BEAUTY.
+            </p>
           </div>
 
           <div className="product-grid">
             {business.services
               .filter((service) => service.category === "Beauty Products")
-              .map((product) => (
-                <article className="product-card" key={product.name}>
-                  <h3>{product.name}</h3>
+              .map((service) => (
+                <article
+                  className="product-card"
+                  key={service.name}
+                >
+                  <span className="eyebrow">MALDEE BEAUTY</span>
 
-                  <p>{product.description}</p>
+                  <h3>{service.name}</h3>
 
-                  <a href="/contact">Inquire →</a>
+                  <p>{service.description}</p>
+
+                  <a href="/contact">Enquire →</a>
                 </article>
               ))}
           </div>
         </section>
 
-        <section className="section gallery-section">
+        <section className="gallery-section section">
           <div className="section-heading">
-            <p className="eyebrow">OUR WORLD</p>
+            <p className="eyebrow">GALLERY</p>
 
-            <h2>A glimpse into the MALDEE BEAUTY experience.</h2>
+            <h2>
+              A glimpse into beauty and personal expression.
+            </h2>
+
+            <p>
+              Explore the world of beauty, styling and artistry at MALDEE
+              BEAUTY.
+            </p>
           </div>
 
           <div className="gallery-grid">
-            <img
-              src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=900&q=85"
-              alt="Professional makeup beauty look"
-              loading="lazy"
-            />
+            <figure className="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1200&q=85"
+                alt="Professional beauty and makeup"
+                loading="lazy"
+              />
 
-            <img
-              src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=900&q=85"
-              alt="Professional beauty and makeup"
-              loading="lazy"
-            />
+              <figcaption>Beauty</figcaption>
+            </figure>
 
-            <img
-              src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85"
-              alt="Elegant fashion and beauty styling"
-              loading="lazy"
-            />
+            <figure className="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=85"
+                alt="Elegant beauty styling"
+                loading="lazy"
+              />
 
-            <img
-              src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=85"
-              alt="Professional hair styling"
-              loading="lazy"
-            />
+              <figcaption>Styling</figcaption>
+            </figure>
+
+            <figure className="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1200&q=85"
+                alt="Professional hair styling"
+                loading="lazy"
+              />
+
+              <figcaption>Hair & Wigs</figcaption>
+            </figure>
+          </div>
+
+          <div className="section-actions">
+            <a
+              className="button button-light"
+              href="/gallery"
+            >
+              View Full Gallery
+            </a>
           </div>
         </section>
 
@@ -182,7 +234,9 @@ function Home() {
           <div>
             <p className="eyebrow">WHY MALDEE BEAUTY</p>
 
-            <h2>A professional destination for your beauty journey.</h2>
+            <h2>
+              A beauty experience built around confidence and individuality.
+            </h2>
           </div>
 
           <div className="trust-grid">
@@ -192,7 +246,8 @@ function Home() {
               <h3>Attention to Detail</h3>
 
               <p>
-                Every beauty service deserves care, precision and attention.
+                Every service deserves care, precision and thoughtful
+                execution.
               </p>
             </div>
 
@@ -202,7 +257,7 @@ function Home() {
               <h3>Professional Environment</h3>
 
               <p>
-                A welcoming setting designed around your beauty experience.
+                A welcoming environment focused on your beauty experience.
               </p>
             </div>
 
@@ -212,14 +267,15 @@ function Home() {
               <h3>Personalized Service</h3>
 
               <p>
-                Beauty choices that reflect your individual style and needs.
+                Beauty choices and services that reflect your individual
+                preferences.
               </p>
             </div>
 
             <div>
               <strong>04</strong>
 
-              <h3>Convenient Location</h3>
+              <h3>Thika Town</h3>
 
               <p>
                 Conveniently located in Thika Town, Kenya.
@@ -230,13 +286,15 @@ function Home() {
 
         <section className="contact-section">
           <div className="contact-inner">
-            <p className="eyebrow">GET IN TOUCH</p>
+            <p className="eyebrow">READY WHEN YOU ARE</p>
 
-            <h2>Ready to elevate your look?</h2>
+            <h2>
+              Let's create your next look.
+            </h2>
 
             <p>
-              Contact MALDEE BEAUTY to enquire about services, appointments
-              and available beauty products.
+              Contact MALDEE BEAUTY for appointments, services, products
+              and general enquiries.
             </p>
 
             <div className="contact-actions">
@@ -246,10 +304,13 @@ function Home() {
                 target="_blank"
                 rel="noreferrer"
               >
-                WhatsApp Us
+                Chat on WhatsApp
               </a>
 
-              <a className="button button-light" href={business.phoneLink}>
+              <a
+                className="button button-light"
+                href={business.phoneLink}
+              >
                 Call Now
               </a>
 
@@ -260,36 +321,9 @@ function Home() {
                 Email Us
               </a>
             </div>
-
-            <div className="business-details">
-              <div>
-                <span>Location</span>
-                <strong>{business.location}</strong>
-              </div>
-
-              <div>
-                <span>Phone</span>
-                <strong>{business.phone}</strong>
-              </div>
-
-              <div>
-                <span>Email</span>
-                <strong>{business.email}</strong>
-              </div>
-            </div>
           </div>
         </section>
       </main>
-
-      <a
-        className="floating-whatsapp"
-        href={`${business.whatsappLink}?text=${whatsappMessage}`}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Chat with MALDEE BEAUTY on WhatsApp"
-      >
-        WhatsApp
-      </a>
 
       <Footer />
     </>
