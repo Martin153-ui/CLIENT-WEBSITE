@@ -1,98 +1,73 @@
 import { business } from "../config/business";
+import Header from "../components/Header";
 
 function Contact() {
+  const whatsappMessage = encodeURIComponent(
+    "Hello MALDEE BEAUTY, I would like to enquire about your services."
+  );
+
   return (
     <>
-      <header className="site-header">
-        <a href="/" className="brand" aria-label="MALDEE BEAUTY home">
-          <span className="brand-main">MALDEE</span>
-          <span className="brand-sub">BEAUTY</span>
-        </a>
-
-        <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/gallery">Gallery</a>
-          <a href="/contact">Contact</a>
-        </nav>
-
-        <a
-          className="header-whatsapp"
-          href={business.whatsappLink}
-          target="_blank"
-          rel="noreferrer"
-        >
-          WhatsApp Us
-        </a>
-      </header>
+      <Header />
 
       <main id="main-content">
         <section className="section">
           <div className="section-heading">
             <p className="eyebrow">CONTACT MALDEE BEAUTY</p>
 
-            <h1>Let's talk about your beauty needs.</h1>
+            <h1>
+              Let's talk about your next beauty experience.
+            </h1>
 
             <p>
-              Reach out to enquire about appointments, services and available
-              beauty products.
+              Contact MALDEE BEAUTY for appointments, beauty services,
+              products and general enquiries in Thika Town.
             </p>
           </div>
 
-          <div className="business-details">
-            <div>
-              <span>Location</span>
-              <strong>{business.location}</strong>
-            </div>
+          <div className="contact-section">
+            <div className="contact-inner">
+              <div className="business-details">
+                <div>
+                  <span>Location</span>
+                  <strong>{business.location}</strong>
+                </div>
 
-            <div>
-              <span>Phone</span>
-              <a href={business.phoneLink}>
-                <strong>{business.phone}</strong>
-              </a>
-            </div>
+                <div>
+                  <span>Phone</span>
+                  <strong>{business.phone}</strong>
+                </div>
 
-            <div>
-              <span>Email</span>
-              <a href={`mailto:${business.email}`}>
-                <strong>{business.email}</strong>
-              </a>
-            </div>
-          </div>
-        </section>
+                <div>
+                  <span>Email</span>
+                  <strong>{business.email}</strong>
+                </div>
+              </div>
 
-        <section className="contact-section">
-          <div className="contact-inner">
-            <p className="eyebrow">BOOK OR ENQUIRE</p>
+              <div className="contact-actions">
+                <a
+                  className="button button-dark"
+                  href={`${business.whatsappLink}?text=${whatsappMessage}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  WhatsApp Us
+                </a>
 
-            <h2>Choose the easiest way to reach us.</h2>
+                <a
+                  className="button button-light"
+                  href={business.phoneLink}
+                >
+                  Call Now
+                </a>
 
-            <p>
-              WhatsApp is the quickest way to enquire about appointments,
-              services and product availability.
-            </p>
-
-            <div className="contact-actions">
-              <a
-                className="button button-dark"
-                href={business.whatsappLink}
-                target="_blank"
-                rel="noreferrer"
-              >
-                WhatsApp MALDEE BEAUTY
-              </a>
-
-              <a className="button button-light" href={business.phoneLink}>
-                Call {business.phone}
-              </a>
-
-              <a
-                className="button button-light"
-                href={`mailto:${business.email}`}
-              >
-                Send an Email
-              </a>
+                <a
+                  className="button button-light"
+                  href={`mailto:${business.email}`}
+                >
+                  Email Us
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -101,21 +76,98 @@ function Contact() {
           <div className="section-heading">
             <p className="eyebrow">OPENING HOURS</p>
 
-            <h2>When you can visit us.</h2>
+            <h2>When you can reach us.</h2>
           </div>
 
-          <div className="services-grid">
+          <div className="trust-grid">
             {business.openingHours.map((item, index) => (
-              <article className="service-card" key={item.day}>
-                <span className="service-number">
+              <div key={item.day}>
+                <strong>
                   {String(index + 1).padStart(2, "0")}
-                </span>
+                </strong>
 
                 <h3>{item.day}</h3>
 
                 <p>{item.hours}</p>
-              </article>
+              </div>
             ))}
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="section-heading">
+            <p className="eyebrow">FIND US</p>
+
+            <h2>Visit us in Thika Town.</h2>
+
+            <p>
+              MALDEE BEAUTY is located in Thika Town, Kenya. Contact us
+              directly for directions and appointment enquiries.
+            </p>
+          </div>
+
+          <div
+            style={{
+              width: "100%",
+              minHeight: "320px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              border: "1px solid rgba(37, 33, 31, 0.12)",
+              background: "#eee8df",
+              textAlign: "center",
+              padding: "40px",
+            }}
+          >
+            <div>
+              <p className="eyebrow">MALDEE BEAUTY</p>
+
+              <h3>Thika Town, Kenya</h3>
+
+              <p>
+                Contact us for directions and location details.
+              </p>
+
+              <a
+                className="button button-dark"
+                href="https://www.google.com/maps/search/?api=1&query=Thika+Town+Kenya"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open Google Maps
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="contact-section">
+          <div className="contact-inner">
+            <p className="eyebrow">READY WHEN YOU ARE</p>
+
+            <h2>Start your beauty conversation today.</h2>
+
+            <p>
+              Whether you already know what you want or need help choosing a
+              service, reach out to MALDEE BEAUTY.
+            </p>
+
+            <div className="contact-actions">
+              <a
+                className="button button-dark"
+                href={`${business.whatsappLink}?text=${whatsappMessage}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Chat on WhatsApp
+              </a>
+
+              <a
+                className="button button-light"
+                href={business.phoneLink}
+              >
+                Call {business.phone}
+              </a>
+            </div>
           </div>
         </section>
       </main>
@@ -131,6 +183,7 @@ function Contact() {
 
         <div>
           <h3>Explore</h3>
+
           <a href="/">Home</a>
           <a href="/about">About</a>
           <a href="/services">Services</a>
@@ -152,8 +205,15 @@ function Contact() {
 
         <div>
           <h3>Contact</h3>
-          <a href={business.phoneLink}>{business.phone}</a>
-          <a href={`mailto:${business.email}`}>{business.email}</a>
+
+          <a href={business.phoneLink}>
+            {business.phone}
+          </a>
+
+          <a href={`mailto:${business.email}`}>
+            {business.email}
+          </a>
+
           <span>{business.location}</span>
         </div>
 
