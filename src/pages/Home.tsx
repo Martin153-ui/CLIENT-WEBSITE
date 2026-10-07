@@ -8,6 +8,11 @@ function Home() {
     "Hello MALDEE BEAUTY, I would like to enquire about your services."
   );
 
+  const whatsappLink =
+    business.whatsappLink + "?text=" + whatsappMessage;
+
+  const emailLink = "mailto:" + business.email;
+
   return (
     <>
       <Header />
@@ -28,7 +33,7 @@ function Home() {
             <div className="hero-actions">
               <a
                 className="button button-dark"
-                href={`${business.whatsappLink}?text=${whatsappMessage}`}
+                href={whatsappLink}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -45,7 +50,7 @@ function Home() {
 
             <div className="quick-contact">
               <a
-                href={`${business.whatsappLink}?text=${whatsappMessage}`}
+                href={whatsappLink}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -97,7 +102,9 @@ function Home() {
 
                 <p>{service.description}</p>
 
-                <a href="/services">Explore Service →</a>
+                <a href="/services">
+                  Explore Service →
+                </a>
               </article>
             ))}
           </div>
@@ -156,19 +163,26 @@ function Home() {
 
           <div className="product-grid">
             {business.services
-              .filter((service) => service.category === "Beauty Products")
+              .filter(
+                (service) =>
+                  service.category === "Beauty Products"
+              )
               .map((service) => (
                 <article
                   className="product-card"
                   key={service.name}
                 >
-                  <span className="eyebrow">MALDEE BEAUTY</span>
+                  <span className="eyebrow">
+                    MALDEE BEAUTY
+                  </span>
 
                   <h3>{service.name}</h3>
 
                   <p>{service.description}</p>
 
-                  <a href="/contact">Enquire →</a>
+                  <a href="/contact">
+                    Enquire →
+                  </a>
                 </article>
               ))}
           </div>
@@ -300,7 +314,7 @@ function Home() {
             <div className="contact-actions">
               <a
                 className="button button-dark"
-                href={`${business.whatsappLink}?text=${whatsappMessage}`}
+                href={whatsappLink}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -316,7 +330,7 @@ function Home() {
 
               <a
                 className="button button-light"
-                href={`mailto:${business.email}`}
+                href={emailLink}
               >
                 Email Us
               </a>
