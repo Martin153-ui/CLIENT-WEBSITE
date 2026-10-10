@@ -24,7 +24,7 @@ function Home() {
 
             <h1>Beauty, Confidence & Artistry — All in One Place</h1>
 
-            <p>
+            <p className="hero-text">
               Professional beauty services, personal expression and carefully
               selected beauty products in one elegant destination in Thika
               Town, Kenya.
@@ -40,10 +40,7 @@ function Home() {
                 WhatsApp Us
               </a>
 
-              <a
-                className="button button-light"
-                href="/services"
-              >
+              <a className="button button-light" href="/services">
                 Explore Services
               </a>
             </div>
@@ -77,9 +74,7 @@ function Home() {
           <div className="section-heading">
             <p className="eyebrow">WHAT WE OFFER</p>
 
-            <h2>
-              Beauty services created to complement your style.
-            </h2>
+            <h2>Beauty services created to complement your style.</h2>
 
             <p>
               From professional makeup and lashes to wigs, microblading,
@@ -90,10 +85,7 @@ function Home() {
 
           <div className="services-grid">
             {business.services.slice(0, 6).map((service, index) => (
-              <article
-                className="service-card"
-                key={service.name}
-              >
+              <article className="service-card" key={service.name}>
                 <span className="service-number">
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -102,9 +94,7 @@ function Home() {
 
                 <p>{service.description}</p>
 
-                <a href="/services">
-                  Explore Service →
-                </a>
+                <a href="/services">Explore Service →</a>
               </article>
             ))}
           </div>
@@ -122,9 +112,7 @@ function Home() {
           <div className="about-content">
             <p className="eyebrow">ABOUT MALDEE BEAUTY</p>
 
-            <h2>
-              Beauty, artistry and confidence in one destination.
-            </h2>
+            <h2>Beauty, artistry and confidence in one destination.</h2>
 
             <p>
               MALDEE BEAUTY brings together professional beauty services,
@@ -138,10 +126,7 @@ function Home() {
               beauty experience.
             </p>
 
-            <a
-              className="button button-dark"
-              href="/about"
-            >
+            <a className="button button-dark" href="/about">
               Discover MALDEE BEAUTY
             </a>
           </div>
@@ -151,9 +136,7 @@ function Home() {
           <div className="section-heading">
             <p className="eyebrow">BEAUTY PRODUCTS</p>
 
-            <h2>
-              Complete your beauty routine.
-            </h2>
+            <h2>Complete your beauty routine.</h2>
 
             <p>
               Explore selected makeup, skincare, haircare, wigs and
@@ -164,25 +147,17 @@ function Home() {
           <div className="product-grid">
             {business.services
               .filter(
-                (service) =>
-                  service.category === "Beauty Products"
+                (service) => service.category === "Beauty Products"
               )
               .map((service) => (
-                <article
-                  className="product-card"
-                  key={service.name}
-                >
-                  <span className="eyebrow">
-                    MALDEE BEAUTY
-                  </span>
+                <article className="product-card" key={service.name}>
+                  <span className="eyebrow">MALDEE BEAUTY</span>
 
                   <h3>{service.name}</h3>
 
                   <p>{service.description}</p>
 
-                  <a href="/contact">
-                    Enquire →
-                  </a>
+                  <a href="/contact">Enquire →</a>
                 </article>
               ))}
           </div>
@@ -192,9 +167,7 @@ function Home() {
           <div className="section-heading">
             <p className="eyebrow">GALLERY</p>
 
-            <h2>
-              A glimpse into beauty and personal expression.
-            </h2>
+            <h2>A glimpse into beauty and personal expression.</h2>
 
             <p>
               Explore the world of beauty, styling and artistry at MALDEE
@@ -235,10 +208,7 @@ function Home() {
           </div>
 
           <div className="section-actions">
-            <a
-              className="button button-light"
-              href="/gallery"
-            >
+            <a className="button button-light" href="/gallery">
               View Full Gallery
             </a>
           </div>
@@ -256,9 +226,7 @@ function Home() {
           <div className="trust-grid">
             <div>
               <strong>01</strong>
-
               <h3>Attention to Detail</h3>
-
               <p>
                 Every service deserves care, precision and thoughtful
                 execution.
@@ -267,9 +235,7 @@ function Home() {
 
             <div>
               <strong>02</strong>
-
               <h3>Professional Environment</h3>
-
               <p>
                 A welcoming environment focused on your beauty experience.
               </p>
@@ -277,9 +243,7 @@ function Home() {
 
             <div>
               <strong>03</strong>
-
               <h3>Personalized Service</h3>
-
               <p>
                 Beauty choices and services that reflect your individual
                 preferences.
@@ -288,12 +252,8 @@ function Home() {
 
             <div>
               <strong>04</strong>
-
               <h3>Thika Town</h3>
-
-              <p>
-                Conveniently located in Thika Town, Kenya.
-              </p>
+              <p>Conveniently located in Thika Town, Kenya.</p>
             </div>
           </div>
         </section>
@@ -302,9 +262,7 @@ function Home() {
           <div className="contact-inner">
             <p className="eyebrow">READY WHEN YOU ARE</p>
 
-            <h2>
-              Let's create your next look.
-            </h2>
+            <h2>Let's create your next look.</h2>
 
             <p>
               Contact MALDEE BEAUTY for appointments, services, products
@@ -321,17 +279,11 @@ function Home() {
                 Chat on WhatsApp
               </a>
 
-              <a
-                className="button button-light"
-                href={business.phoneLink}
-              >
+              <a className="button button-light" href={business.phoneLink}>
                 Call Now
               </a>
 
-              <a
-                className="button button-light"
-                href={emailLink}
-              >
+              <a className="button button-light" href={emailLink}>
                 Email Us
               </a>
             </div>
