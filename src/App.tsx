@@ -1,9 +1,10 @@
+```tsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Gallery from "./pages/Gallery";
-import Contact from "./pages/Contact";
+import Home from "./pages/Home.tsx";
+import About from "./pages/About.tsx";
+import Services from "./pages/Services.tsx";
+import Gallery from "./pages/Gallery.tsx";
+import Contact from "./pages/Contact.tsx";
 
 function App() {
   return (
@@ -20,3 +21,4 @@ function App() {
 }
 
 export default App;
+```
