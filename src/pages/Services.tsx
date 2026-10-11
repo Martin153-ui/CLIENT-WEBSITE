@@ -1,4 +1,4 @@
-```tsx
+
 import { business } from "../config/business";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -10,6 +10,15 @@ function Services() {
     "Body Art",
     "Beauty Products",
   ];
+
+  const whatsappMessage = encodeURIComponent(
+    "Hello MALDEE BEAUTY, I would like to enquire about your services."
+  );
+
+  const whatsappLink =
+    business.whatsappLink + "?text=" + whatsappMessage;
+
+  const emailLink = "mailto:" + business.email;
 
   return (
     <>
@@ -61,10 +70,7 @@ function Services() {
 
                 <div className="services-grid">
                   {categoryServices.map((service, index) => (
-                    <article
-                      className="service-card"
-                      key={service.name}
-                    >
+                    <article className="service-card" key={service.name}>
                       <span className="service-number">
                         {String(index + 1).padStart(2, "0")}
                       </span>
@@ -73,7 +79,7 @@ function Services() {
 
                       <p>{service.description}</p>
 
-                      <a href="/contact">Inquire →</a>
+                      <a href="/contact">Enquire →</a>
                     </article>
                   ))}
                 </div>
@@ -96,9 +102,7 @@ function Services() {
             <div className="contact-actions">
               <a
                 className="button button-dark"
-                href={`${business.whatsappLink}?text=${encodeURIComponent(
-                  "Hello MALDEE BEAUTY, I would like to enquire about your services."
-                )}`}
+                href={whatsappLink}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -114,7 +118,7 @@ function Services() {
 
               <a
                 className="button button-light"
-                href={`mailto:${business.email}`}
+                href={emailLink}
               >
                 Email Us
               </a>
@@ -129,4 +133,3 @@ function Services() {
 }
 
 export default Services;
-```
