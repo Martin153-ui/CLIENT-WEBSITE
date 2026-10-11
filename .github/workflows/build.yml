@@ -10,6 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Get website source
         uses: actions/checkout@v4
@@ -18,7 +19,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
       - name: Install dependencies
         run: npm install
@@ -30,4 +30,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: maldee-beauty-dist
+          path: dist/
+          if-no-files-found: error
+
           path: dist/
