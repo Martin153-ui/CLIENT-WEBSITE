@@ -10,7 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Get website source
         uses: actions/checkout@v4
@@ -32,5 +31,3 @@ jobs:
           name: maldee-beauty-dist
           path: dist/
           if-no-files-found: error
-
-          path: dist/
