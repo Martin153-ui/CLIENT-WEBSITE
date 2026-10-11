@@ -8,6 +8,11 @@ function Contact() {
     "Hello MALDEE BEAUTY, I would like to enquire about your services."
   );
 
+  const whatsappLink =
+    business.whatsappLink + "?text=" + whatsappMessage;
+
+  const emailLink = "mailto:" + business.email;
+
   return (
     <>
       <Header />
@@ -49,7 +54,7 @@ function Contact() {
               <div className="contact-actions">
                 <a
                   className="button button-dark"
-                  href={`${business.whatsappLink}?text=${whatsappMessage}`}
+                  href={whatsappLink}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -65,7 +70,7 @@ function Contact() {
 
                 <a
                   className="button button-light"
-                  href={`mailto:${business.email}`}
+                  href={emailLink}
                 >
                   Email Us
                 </a>
@@ -156,7 +161,7 @@ function Contact() {
             <div className="contact-actions">
               <a
                 className="button button-dark"
-                href={`${business.whatsappLink}?text=${whatsappMessage}`}
+                href={whatsappLink}
                 target="_blank"
                 rel="noreferrer"
               >
